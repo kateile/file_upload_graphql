@@ -1,0 +1,5 @@
+mutation updateImage($image:Image,$id:Int!) {
+    updateProperty(data: {id: $id,imageUrl:$image}) {
+        imageUrl
+    }
+}

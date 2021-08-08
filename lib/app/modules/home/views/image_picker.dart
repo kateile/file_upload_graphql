@@ -68,9 +68,9 @@ class _EditImageState extends State<EditImage> {
 
 //ADD GRAPHQL MUTATION
           document: gql(r"""
-mutation UpdateImage($image:Upload,$id:Int!) {
-  updateProperty(data: {id: $id,image:$image}) {
-    image
+mutation UpdateImage($image:Image,$id:Int!) {
+  updateProperty(data: {id: $id,imageUrl:$image}) {
+    imageUrl
   }
 }
 """)),

@@ -9,14 +9,11 @@ import 'app/routes/app_pages.dart';
 void main() async {
   await initHiveForFlutter();
   final HttpLink dioLink = HttpLink(
-    'http://192.168.1.24:4003/graphql',
-    defaultHeaders: {
-      "Authorization": "Bearer ",
-    },
+    'http://aqaratikom.com:5000/graphql'
   );
 
   final AuthLink authLink = AuthLink(
-    getToken: () async => 'Bearer ',
+    getToken: () async => 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTA5MjM1MTg3NGE4MTA4NzdkNTIxMjYiLCJpZCI6MSwicm9sZXMiOlsiYWRtaW4iXSwiaWF0IjoxNjI4MzM5NjAwLCJleHAiOjE2MjgzNDMyMDB9.Yl9lM3Ms6lvLzswN5YN64hn2yyff0UyvZDxhNArUzgU',
   );
 
   final Link link = authLink.concat(dioLink);
